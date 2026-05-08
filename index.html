@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>传感器技术 - 感知世界的智能科技</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei", sans-serif;
+        }
+
+        /* 全局样式 */
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* 导航栏 */
+        nav {
+            background: #1a237e;
+            color: white;
+            padding: 1rem 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            margin-left: 2rem;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #64b5f6;
+        }
+
+        /* 头部横幅 */
+        .banner {
+            margin-top: 70px;
+            height: 500px;
+            background: linear-gradient(rgba(26,35,126,0.8), rgba(26,35,126,0.9)), url('https://picsum.photos/id/180/1920/1080');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            padding: 0 5%;
+        }
+
+        .banner-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .banner-content p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: #64b5f6;
+            color: #1a237e;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #90caf9;
+            transform: translateY(-3px);
+        }
+
+        /* 通用区块样式 */
+        .section {
+            padding: 5rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            color: #1a237e;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: "";
+            width: 80px;
+            height: 4px;
+            background: #64b5f6;
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* 传感器介绍 */
+        .intro {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .intro-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .intro-img {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .intro-img img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        /* 传感器类型 */
+        .types {
+            background: white;
+        }
+
+        .card-group {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: #f5f7fa;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .card h3 {
+            color: #1a237e;
+            margin: 1rem 0;
+        }
+
+        /* 应用领域 */
+        .apps {
+            background: #e8eaf6;
+        }
+
+        /* 工作原理 */
+        .principle {
+            text-align: center;
+        }
+
+        /* 联系我们 */
+        .contact {
+            background: white;
+            text-align: center;
+        }
+
+        /* 页脚 */
+        footer {
+            background: #1a237e;
+            color: white;
+            text-align: center;
+            padding: 2rem 5%;
+        }
+
+        /* 响应式适配 */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .banner-content h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 导航栏 -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">传感器技术</div>
+            <div class="nav-links">
+                <a href="#home">首页</a>
+                <a href="#intro">技术介绍</a>
+                <a href="#types">传感器类型</a>
+                <a href="#apps">应用领域</a>
+                <a href="#principle">工作原理</a>
+                <a href="#contact">联系我们</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 首页横幅 -->
+    <section class="banner" id="home">
+        <div class="banner-content">
+            <h1>传感器技术 · 感知世界的智能核心</h1>
+            <p>传感器是现代智能科技的“五官”，能够感知物理世界的温度、湿度、压力、光线、声音、距离等信息，是物联网、人工智能、自动化设备的基础核心技术。</p>
+            <a href="#intro" class="btn">了解更多</a>
+        </div>
+    </section>
+
+    <!-- 技术介绍 -->
+    <section class="section" id="intro">
+        <h2 class="section-title">传感器技术介绍</h2>
+        <div class="intro">
+            <div class="intro-text">
+                <p>传感器是一种检测装置，能感受到被测量的信息，并能将感受到的信息，按一定规律变换成为电信号或其他所需形式的信息输出，以满足信息的传输、处理、存储、显示、记录和控制等要求。</p>
+                <br>
+                <p>随着物联网、工业4.0、智能家居、自动驾驶的快速发展，传感器技术正迎来前所未有的发展机遇，广泛应用于各行各业，成为连接物理世界与数字世界的桥梁。</p>
+            </div>
+            <div class="intro-img">
+                <img src="https://picsum.photos/id/6/600/400" alt="传感器技术">
+            </div>
+        </div>
+    </section>
+
+    <!-- 传感器类型 -->
+    <section class="section types" id="types">
+        <h2 class="section-title">常见传感器类型</h2>
+        <div class="card-group">
+            <div class="card">
+                <h3>温度传感器</h3>
+                <p>检测环境或物体温度，广泛用于空调、工业设备、医疗仪器。</p>
+            </div>
+            <div class="card">
+                <h3>湿度传感器</h3>
+                <p>测量空气湿度，应用于气象、农业、智能家居、仓储环境。</p>
+            </div>
+            <div class="card">
+                <h3>压力传感器</h3>
+                <p>感知压力变化，用于液压系统、汽车胎压、医疗监护设备。</p>
+            </div>
+            <div class="card">
+                <h3>光敏传感器</h3>
+                <p>检测光线强度，应用于手机亮度调节、路灯自动控制、相机。</p>
+            </div>
+            <div class="card">
+                <h3>超声波传感器</h3>
+                <p>通过声波测距，用于机器人避障、汽车倒车雷达、流量检测。</p>
+            </div>
+            <div class="card">
+                <h3>红外传感器</h3>
+                <p>检测红外信号，应用于人体感应、测温仪、安防监控。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 应用领域 -->
+    <section class="section apps" id="apps">
+        <h2 class="section-title">传感器应用领域</h2>
+        <div class="card-group">
+            <div class="card">
+                <h3>智能家居</h3>
+                <p>智能灯、空调、窗帘、安防系统全靠传感器实现自动化。</p>
+            </div>
+            <div class="card">
+                <h3>工业自动化</h3>
+                <p>生产线监控、设备状态检测、质量控制、安全防护。</p>
+            </div>
+            <div class="card">
+                <h3>汽车电子</h3>
+                <p>自动驾驶、胎压监测、碰撞预警、发动机状态监控。</p>
+            </div>
+            <div class="card">
+                <h3>医疗健康</h3>
+                <p>体温计、心率手环、血氧仪、呼吸机、监护设备。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 工作原理 -->
+    <section class="section" id="principle">
+        <h2 class="section-title">传感器基本工作原理</h2>
+        <div class="intro-text">
+            <p>传感器工作流程分为三步：</p>
+            <br>
+            <p><strong>1. 感知信号</strong>：捕捉物理量（温度、压力、光线等）</p>
+            <p><strong>2. 信号转换</strong>：将物理信号转换为电信号</p>
+            <p><strong>3. 输出处理</strong>：将信号传输给控制系统进行处理</p>
+            <br>
+            <p>简单来说：传感器 = 物理世界的感知器官 + 信号转换器</p>
+        </div>
+    </section>
+
+    <!-- 联系我们 -->
+    <section class="section contact" id="contact">
+        <h2 class="section-title">联系我们</h2>
+        <p>邮箱：sensor@tech.com</p>
+        <p>电话：400-123-4567</p>
+        <p>地址：北京市海淀区科技园区传感器技术中心</p>
+    </section>
+
+    <!-- 页脚 -->
+    <footer>
+        <p>&copy; 2025 传感器技术官网 | 感知世界 · 智能未来</p>
+    </footer>
+
+</body>
+</html>
